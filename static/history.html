@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Cервис учета студентов</title>
+	<meta name="description"
+		      value="Система учета студентов учебного заведения"/>
+	<link rel="stylesheet"
+		      href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 0px solid blue;}</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row" id="header" >
+			<div class="col-xs-8">
+				<h1>Сервис учета студентов</h1>
+			</div>
+			<!-- Groups Selector -->
+			<div class="col-xs-4" id="group-selector"> <strong>Group:</strong>
+				<select>
+					<option value="">All students</option>
+					<option value="">6-TM,Paniuta Stanislav/2223</option>
+					<option value="">6-TK, Tokar Sergiy/2465</option>
+					<option value="">6-TM, Kuchma Artem/5532</option>
+					<option value="">6-RT, Mazurina Olga/2453</option>
+				</select>
+			</div>
+		</div>
+		<!-- End Header -->
+		<!-- Start SubHeader -->
+		<div class="row",id="sub-header">
+			<div class="col-xs-12">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" >
+						<a href="#">Студенты</a>
+					</li>
+					<li role="presentation" class="active">
+						<a href="#">Посещения</a>
+					</li>
+					<li role="presentation">
+						<a href="#">Группы</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- End SubHeader -->
+
+		<!-- Start Main Page Content -->
+		<div class="row" id="content-columns">
+			<div class="col-xs-12" id="content-column">
+				<!-- Status Message -->
+				<!--	<div class="alert alert-warning">Изменения отменены.</div>
+			-->
+			<h2>Учет посещения</h2>
+			<!-- Add Student Button -->
+			<div align="center"><a class="glyphicon glyphicon-arrow-right" href="#"></a><h4>Ноябрь 2014</h4><a class="glyphicon glyphicon-arrow-left" href="#"></a></div>
+
+			<!-- Start Students Listing -->
+			<table class="table table-hover table-striped" border="0" >
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Студент</th>
+						<th>СБ  1</th>
+						<th>ВС  2</th>
+						<th>ПН  3</th>
+						<th>ВТ  4</th>
+						<th>СР  5</th>
+						<th>ЧТ  6</th>
+						<th>ПТ  7</th>
+						<th>СБ  8</th>
+						<th>ВС  9</th>
+						<th>ПН  10</th>
+						<th>ВТ  11</th>
+						<th>СР  12</th>
+						<th>ЧТ  13</th>
+						<th>ПТ  14</th>
+						<th>СБ  15</th>
+						<th>ВС  16</th>
+						<th>ПН  17</th>
+						<th>ВТ  18</th>
+						<th>СР  19</th>
+						<th>ЧТ  20</th>
+						<th>ПТ  21</th>
+						<th>СБ  22</th>
+						<th>ВС  23</th>
+						<th>ПН  24</th>
+						<th>ВТ  25</th>
+						<th>СР  26</th>
+						<th>ЧТ  27</th>
+						<th>ПТ  28</th>
+						<th>СБ  29</th>
+						<th>ВС  30</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>
+							<a title="Редактировать" href="#">Paniuta Stanislav</a></td>		
+							<td> <input type="checkbox"></td>		
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+							<td> <input type="checkbox"></td>	
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>
+							<a title="Редактировать" href="#">Tokar Sergiy</a>
+						</td>
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>
+							<a title="Редактировать" href="#">Kuchma Artem</a>
+						</td>
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						<td> <input type="checkbox"></td>	
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- End Main Page Content -->
+	<!-- Start Footer -->
+	<div class="row" id="footer">
+		<div class="col-xs-12">&copy;   Сервис учета студентов</div>
+	</div>
+	<!-- End Footer -->
+</div>
+<!-- Javascripts Section -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

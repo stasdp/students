@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Cервис учета студентов</title>
+	<meta name="description"
+		      value="Система учета студентов учебного заведения"/>
+	<link rel="stylesheet"
+		      href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 0px solid blue;}</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row" id="header" >
+			<div class="col-xs-6">
+				<h3 align="left">Форма редактирования студента</h3>
+			</div>
+		</div>
+	</div>
+	<div class="row",id="sub-header">
+		<div class="col-xs-8">
+		<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputName" class="col-sm-2 control-label">Имя</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="inputName" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputSecondName" class="col-sm-2 control-label">Фамилия</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="inputSecondName" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPatronymic" class="col-sm-2 control-label">Отчество</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="inputPatronymic" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputTicket" class="col-sm-2 control-label">№ билета</label>
+    <div class="col-sm-6">
+      <input type="number" class="form-control" id="inputTicket" >
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputDob" class="col-sm-2 control-label">Дата рождения</label>
+    <div class="col-sm-6">
+      <input type="date" class="form-control" id="inputDob">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPhoto" class="col-sm-2 control-label">Фото</label>
+    <div class="col-sm-6">
+      <input type="file"  id="inputPhoto" >
+    </div>
+  </div>
+  <div class="col-xs-6" id="group-selector"> 
+ <label for="inputGroup" class="col-xs-4 control-label">Группа</label>
+ <div class="col-xs-6	">
+				<select>
+					<option value="">6-TM</option>
+					<option value="">6-TK</option>
+					<option value="">6-RT</option>
+				</select>
+				</div>
+			</div>
+  <div class="form-group">
+    <div class="col-sm-offset-1 col-xs-6">
+      <div class="form-group">
+    <label for="inputOther" class="col-xs-6 control-label">Дополнительные ведомости</label>
+    			<div class="col-sm-2">
+      		 <textarea name="Дополнительные ведомости" id="other" cols="33" rows="6"></textarea> 
+   				 </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="footer">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-default" autofocus>Сохранить</button>
+      <button type="reset" class="btn btn-default" >Очистить</button>
+
+
+
+    </div>
+  </div>
+</form>
+	</div>
+	</div>
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
