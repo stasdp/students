@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Cервис учета студентов</title>
+	<meta name="description"
+		      value="Система учета студентов учебного заведения"/>
+	<link rel="stylesheet"
+		      href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 0px solid blue;}</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row" id="header" >
+			<div class="col-xs-8">
+				<h1>Сервис учета студентов</h1>
+			</div>
+			<!-- Groups Selector -->
+			<div class="col-xs-4" id="group-selector"> <strong>Group:</strong>
+				<select>
+					<option value="">All students</option>
+					<option value="">6-TM,Paniuta Stanislav/2223</option>
+					<option value="">6-TK, Tokar Sergiy/2465</option>
+					<option value="">6-TM, Kuchma Artem/5532</option>
+					<option value="">6-RT, Mazurina Olga/2453</option>
+				</select>
+			</div>
+		</div>
+		<!-- End Header -->
+		<!-- Start SubHeader -->
+		<div class="row",id="sub-header">
+			<div class="col-xs-12">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#">Студенты</a>
+					</li>
+					<li role="presentation">
+						<a href="#">Посещения</a>
+					</li>
+					<li role="presentation">
+						<a href="#">Группы</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- End SubHeader -->
+		<!-- Start status message -->
+		<div class="row",id="status-message">
+			<div class="col-xs-12">
+				<div class="alert alert-warning" role="alert">Студент успешно добавлен</div>
+
+			</div>
+		</div>
+		<!-- end status message -->
+
+		<!-- Start Main Page Content -->
+		<div class="row" id="content-columns">
+			<div class="col-xs-12" id="content-column">
+				<!-- Status Message -->
+				<!--	<div class="alert alert-warning">Изменения отменены.</div>
+			-->
+			<h2>База студентов</h2>
+			<!-- Add Student Button -->
+			<a class="btn btn-primary" href="#">Добавить студента</a>
+			<!-- Start Students Listing -->
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th>
+							<a href="">№</a>
+						</th>
+						<th>Фото</th>
+						<th>
+							<a href="">Фамилия &uarr;</a>
+						</th>
+						<th>
+							<a href="">Имя</a>
+						</th>
+						<th>
+							<a href="">Номер билета</a>
+						</th>
+						<th>Действия</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>
+							<img src="lxllxl.png" height="30" width="30" class="img-circle"></td>
+						<td>
+							<a title="Редактировать" href="#">Paniuta</a>
+						</td>
+						<td>
+							<a title="Редактировать" href="#">Stanislav</a>
+						</td>
+						<td>2223</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle"
+									type="button" data-toggle="dropdown">
+									Действие
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Редактировать</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Удалить</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>
+							<img src="PB173805.JPG" height="30" width="30" class="img-circle"></td>
+						<td>
+							<a title="Редактировать" href="#">Tokar</a>
+						</td>
+						<td>
+							<a title="Редактировать" href="#">Sergiy</a>
+						</td>
+						<td>2465</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle"
+									type="button" data-toggle="dropdown">
+									Действие
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Редактировать</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Удалить</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>
+							<img src="фест.jpg" height="30" width="30" class="img-circle"></td>
+						<td>
+							<a title="Редактировать" href="#">Kuchma</a>
+						</td>
+						<td>
+							<a title="Редактировать" href="#">Artem</a>
+						</td>
+						<td>5532</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle"
+									type="button" data-toggle="dropdown">
+									Действие
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Редактировать</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="#">Удалить</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<nav>
+  <ul class="pagination">
+ <li class="disabled"><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</nav>
+		</div>
+	</div>
+	<!-- End Main Page Content -->
+	<!-- Start Footer -->
+	<div class="row" id="footer">
+		<div class="col-xs-12">&copy;   Сервис учета студентов</div>
+	</div>
+	<!-- End Footer -->
+</div>
+<!-- Javascripts Section -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
