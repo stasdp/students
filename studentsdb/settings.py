@@ -24,6 +24,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# TEMPLATE_DIRS = (
+#     '/home/stas/dev/studentsdb/students/templates',
+# )
+
 ALLOWED_HOSTS = []
 
 
