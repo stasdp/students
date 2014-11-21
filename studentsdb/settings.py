@@ -86,14 +86,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+PORTAL_URL = 'http://localhost:8000'
+
 STATIC_URL = '/static/'
 
 TEMPLATE_CONTEXT_PROCESSORS = \
     global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
+    "studentsdb.context_processors.students_proc",
 )
-# TEMPLATE_CONTEXT_PROCESSORS = \
-#     global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-#     "django.core.context_processors.request",
-
-# )
