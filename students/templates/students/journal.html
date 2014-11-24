@@ -1,63 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8"/>
-	<title>Cервис учета студентов</title>
-	<meta name="description"
-		      value="Система учета студентов учебного заведения"/>
-	<link rel="stylesheet"
-		      href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<style type="text/css">.col-xs-12, .col-xs-4, .col-xs-8 {border: 0px solid blue;}</style>
-</head>
-<body>
-	<div class="container">
-		<div class="row" id="header" >
-			<div class="col-xs-8">
-				<h1>Сервис учета студентов</h1>
-			</div>
-			<!-- Groups Selector -->
-			<div class="col-xs-4" id="group-selector"> <strong>Group:</strong>
-				<select>
-					<option value="">All students</option>
-					<option value="">6-TM,Paniuta Stanislav/2223</option>
-					<option value="">6-TK, Tokar Sergiy/2465</option>
-					<option value="">6-TM, Kuchma Artem/5532</option>
-					<option value="">6-RT, Mazurina Olga/2453</option>
-				</select>
-			</div>
-		</div>
-		<!-- End Header -->
-		<!-- Start SubHeader -->
-		<div class="row",id="sub-header">
-			<div class="col-xs-12">
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" >
-						<a href="#">Студенты</a>
-					</li>
-					<li role="presentation" class="active">
-						<a href="#">Посещения</a>
-					</li>
-					<li role="presentation">
-						<a href="#">Группы</a>
-					</li>
+{% extends "students/base.html" %}
+
+
+{% block meta_title %}Учет посещений{% endblock meta_title %}
+{% block title %}Учет посещений{% endblock title %}
+
+{% block content %}
+			<nav>
+				<ul class="pager">
+				<li class="previous-month"><a href="#">&larr;</a></li>
+				<li>Ноябрь</li>
+				<li class="next-month"><a href="#">&rarr;</a></li>
 				</ul>
-			</div>
-		</div>
-		<!-- End SubHeader -->
-
-		<!-- Start Main Page Content -->
-		<div class="row" id="content-columns">
-			<div class="col-xs-12" id="content-column">
-
-			<h2>Учет посещения</h2>
-			<!-- Add Student Button -->
-			<div align="center"><a class="glyphicon glyphicon-arrow-right" href="#"></a><h4>Ноябрь 2014</h4><a class="glyphicon glyphicon-arrow-left" href="#"></a></div>
-
-			<!-- Start Students Listing -->
-			<table class="table table-hover table-striped" border="0" >
-				<thead>
-					<tr>
+			</nav>
+			<table class="table table-hover table-bordered table-striped">
+			<thead>
+				<tr>
 						<th>#</th>
 						<th>Студент</th>
 						<th>СБ  1</th>
@@ -203,18 +160,15 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-	</div>
-	<!-- End Main Page Content -->
-	<!-- Start Footer -->
-	<div class="row" id="footer">
-		<div class="col-xs-12">&copy;   Сервис учета студентов</div>
-	</div>
-	<!-- End Footer -->
-</div>
-<!-- Javascripts Section -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+				<nav>
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li class="active"><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</nav>
+{% endblock content %}
