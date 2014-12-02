@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from .settings import MEDIA_ROOT, DEBUG
+
 
 from django.contrib import admin
 admin.autodiscover()
@@ -17,15 +19,11 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<gid>\d+)/edit/$', 'students.views.groups_list.groups_edit', name='groups_edit'),
     url(r'^groups/(?P<gid>\d+)/delete/$', 'students.views.groups_list.groups_delete', name='groups_delete'),
 
-    # url(r'^', 'students.views.students_list', name='home'),
-    # url(r'^journal/$', 'students.views.students_journal', name='journal'),
-    # url(r'^students/add/$', 'students.views.students_add', name='students_add'),
-    # url(r'^students/(?P<sid>\d+)/edit/$', 'students.views.students_edit', name='students_edit'),
-    # url(r'^students/(?P<sid>\d+)/delete/$', 'students.views.students_delete', name='students_delete'),
-    # url(r'^groups/$', 'students.views.groups_list', name='groups'),
-    # url(r'^groups/add/$', 'students.views.groups_add', name='groups_add'),
-    # url(r'^groups/(?P<gid>\d+)/edit/$', 'students.views.groups_edit', name='groups_edit'),
-    # url(r'^groups/(?P<gid>\d+)/delete/$', 'students.views.groups_delete', name='groups_delete'),
      url(r'^admin/', include(admin.site.urls)),
 
 )
+if DEBUG:
+    # serve files from media folder
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{
+            'document_root':MEDIA_ROOT}))
