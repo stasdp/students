@@ -44,7 +44,7 @@
 					<a href="{% url "home" %}">Студенты</a>
 					</li>
 					<li role="presentation" {% if '/journal' in request.path %} class= "active"{% endif %}>
-						<a href="/journal">Посещения</a>
+						<a href="{% url "journal" %}">Посещения</a>
 					</li>
 					<li role="presentation"{% if '/groups' in request.path %} class= "active"{% endif %}>
 						<a href="{% url "groups" %}">Группы</a>

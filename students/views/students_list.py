@@ -80,8 +80,8 @@ def students_list(request):
 #         #if page out of range (9999),deliver lasr page of results
 #         students = paginator.page(paginator.num_pages)
 
-    # return render(request, 'students/students_list.html',
-    #     {'students': students})
+#     return render(request, 'students/students_list.html',
+#         {'students': students})
 
 def students_add(request):
     return HttpResponse('<h1>Student Add Form</h1>')
