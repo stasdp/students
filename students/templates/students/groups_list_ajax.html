@@ -1,0 +1,76 @@
+{% extends "students/base.html" %}
+{% block meta_title %}Список групп{% endblock meta_title %}
+{% block title %}Список Групп{% endblock title %}
+{% block content %}
+  <a class="btn btn-primary" href="{% url "groups_add" %}">Добавить группу</a>
+<!-- start Groups listing -->
+
+    {% if groups %}
+        <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="#">№</a>
+                        </th>
+                        <th>
+                            <!-- <a href="#">Группа &uarr;</a> -->
+                            <a href="{% url "groups" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                            Название группы
+                            {% if order_by == 'title' and reverse != '1' %}&uarr;
+                            {% elif order_by == 'title' and reverse == '1' %}&darr;
+                                {% endif %}
+                        </th>
+                        <th>
+                            <a href="{% url "groups" %}?order_by=leader{% if order_by == 'leader' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                            Староста
+                            {% if order_by == 'leader' and reverse != '1' %}&uarr;
+                            {% elif order_by == 'leader' and reverse == '1' %}&darr;
+                            {% endif %}
+                        </th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a title="Редактировать" href="{% url "groups_edit" group.id %}">{{ group.title }}</td>
+                        <td><a title="Редактировать" href="{% url "students_edit" group.leader.id %}">{{ group.leader }}</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-default dropdown-toggle"
+                                    type="button" data-toggle="dropdown">Действие<span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{% url "groups_edit" group.id %}">Редактировать</a></li>
+                              <li><a href="{% url "groups_delete" group.id %}">удалить</a></li
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+                <!-- End Students Listing -->
+                {% else %}
+                <p>Пока нет групп в базе</p>
+
+        {% endif %}
+            <nav>
+   <!--          <ul class="pagination">
+   <li><a href="{% url 'home' %}?page=1&amp;order_by={{order_by}}&amp;reverse={{reverse}}">&laquo;</a></li>
+   {% for p in groups.paginator.page_range %}
+       <li {% if groups.number == p %}class="active"{% endif %}>
+           <a href="{% url 'home' %}?page={{ p }}&amp;order_by={{order_by}}&amp;reverse={{reverse}}">{{p}}</a>
+       </li>
+   {% endfor %}
+   <li><a href="{% url 'home' %}?page={{ groups.paginator.num_pages }}&amp;order_by={{order_by}}&amp;reverse={{reverse}}">&raquo;</a></li>
+             </ul> -->
+          <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <!-- <li><a href="#">2</a></li>   
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li> -->
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+        </nav>
+{% endblock content %}
