@@ -26,6 +26,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# MODELS_DIRS = (
+#     '/home/stas/dev/studentsdb/students/models',
+# )
+
 # TEMPLATE_DIRS = (
 #     '/home/stas/dev/studentsdb/students/templates',
 # )
@@ -64,11 +68,15 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'students_db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST' : 'localhost',
+        'USER' : 'students_db_user',
+        'PASSWORD' : '121212',
+        'NAME' : 'students_db',
     }
 }
 
+        # 'NAME': os.path.join(BASE_DIR, '..', 'students_db.sqlite3'),
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 

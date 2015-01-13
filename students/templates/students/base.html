@@ -49,6 +49,9 @@
 					<li role="presentation"{% if '/groups' in request.path %} class= "active"{% endif %}>
 						<a href="{% url "groups" %}">Группы</a>
 					</li>
+					<li role="presentation"{% if '/exam' in request.path %} class= "active"{% endif %}>
+						<a href="{% url "exam" %}">Экзамены</a>
+					</li>
 				</ul>
 			</div>
 		</div>

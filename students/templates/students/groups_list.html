@@ -1,6 +1,5 @@
 {% extends "students/base.html" %}
 
-
 {% block meta_title %}Список групп{% endblock meta_title %}
 
 {% block title %}Список Групп{% endblock title %}
@@ -8,7 +7,7 @@
 {% block content %}
 
  <a class="btn btn-primary" href="{% url "groups_add" %}">Добавить группу</a>   
-<!-- start Student listing -->
+<!-- Start Groups listing -->
 		{% if groups %}
         <table class="table">
         {% with order_by=request.GET.order_by reverse=request.GET.reverse  %}
@@ -17,9 +16,11 @@
                         <th>
                             <a href="#">№</a>
                         </th>
-                        <th><a href="{% url "groups" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&amp;reverse=1{% endif %}">Группа{% if order_by == 'title' and reverse != '1' %}&uarr;
+                        <th><a href="{% url "groups" %}?order_by=title{% if order_by == 'title' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                        Группа
+                        {% if order_by == 'title' and reverse != '1' %}&uarr;
                         {% elif order_by == 'title' and reverse == '1' %}&darr;
-                                                            {% endif %}</a></th>
+                        {% endif %}</a></th>
                  
                         <th>
                             <a href="{% url "groups" %}?order_by=leader{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">
@@ -63,7 +64,7 @@
                 </table>
                 
                 
-                <!-- End Students Listing -->
+                <!-- End Groups Listing -->
     
                 {% else %}
                         <p>Пока нет групп в базе</p>

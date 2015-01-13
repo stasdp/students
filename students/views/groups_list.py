@@ -68,7 +68,7 @@ def groups_list(request):
         if request.GET.get('reverse','') == '1':
             groups = groups.reverse()
 
-    # Paginate_students
+    # Paginate_groups
     paginator = Paginator(groups, 3)
     page = request.GET.get("page")
     try:
