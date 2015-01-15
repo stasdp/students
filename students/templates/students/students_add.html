@@ -3,52 +3,136 @@
 
 {% block meta_title %}Форма добавления студента{% endblock meta_title %}
 {% block title %}Добавить студента{% endblock title %}
-{% block content %}
-    <form action="{% url "students_add" %}" method="post" enctype="multipart/form-data" >
-    {% csrf_token%}
 
-        <div>
-            <label for="first_name">Имя</label>
-            <input type="text" value="" name="first_name" id="first_name" placeholder = "Введите ваше имя">
+{% block status_message %}
+  {% if errors %}
+  <div class="alert alert-warning" role="alert">
+    Пожалуйста,исправьте следующие ошибки.
+  </div>
+  {% endif %}
+{% endblock status_message %}
+
+{% block content %}
+    <form action="." method="post" enctype="multipart/form-data" 
+    role="form" class="form-horizontal" >
+        {% csrf_token%}
+
+        <div class="form-group {% if errors.first_name %}has-error{% endif %}">
+            <label for="first_name" class="col-sm-2 control-label">Имя*</label>
+            <div class="col-sm-10">
+                <input type="text" value="{{ request.POST.first_name }}"
+                name="first_name" id="first_name"
+                class="form-control" placeholder = "Введите ваше имя" />
+                <span class="help-block">{{ errors.first_name }}</span>
+            </div>
         </div>
-        <div>
-            <label for="last_name">Фамилия</label>
-            <input type="text" value="" name="last_name" id="last_name" placeholder = "Введите вашу фамилию">
+        <div class="form-group {% if errors.last_name %}has-error{% endif %}">
+            <label for="last_name" class="col-sm-2 control-label">Фамилия*</label>
+            <div class="col-sm-10">
+                <input type="text" value="{{ request.POST.last_name }}"
+                name="last_name" id="last_name"
+                class="form-control" placeholder = "Введите вашу фамилию" />
+                <span class="help-block">{{ errors.last_name }}</span>
+            </div>
         </div>
-        <div>
-            <label for="middle_name">Отчество</label>
-            <input type="text" value="" name="middle_name" id="middle_name" placeholder = "Введите ваше отчество"> 
+        <div class="form-group {% if errors.middle_name %}has-error{% endif %}">
+            <label for="middle_name" class="col-sm-2 control-label">Отчество</label>
+            <div class="col-sm-10">
+                <input type="text" value="{{ request.POST.middle_name }}"
+                name="middle_name" id="middle_name"
+                class="form-control" placeholder = "Введите ваше отчество" />
+                <span class="help-block">{{ errors.middle_name }}</span>
+            </div>
         </div>
-        <div>
-            <label for="birthday">Дата рождения</label>
-            <input type="text" value="" name="birthday" id="birthday" placeholder = "Например 1992.2.22">
+        <div class="form-group {% if errors.birthday %}has-error{% endif %}">
+            <label for="birthday" class="col-sm-2 control-label">Дата рождения*</label>
+            <div class="col-sm-10">
+                <input type="text" value="{{ request.POST.birthday }}"
+                name="birthday" id="birthday"
+                class="form-control" 
+                placeholder = "Например 1991-12-11." />
+                <span class="help-block">{{ errors.birthday }}</span>
+            </div>
+        </div>       
+        <!-- <div>
+            <label for="birthday">Дата рождения*</label>
+            <input type="text" value="{{ request.POST.birthday }}" name="birthday" id="birthday" 
+            placeholder = "Например 1991-12-11.">
+            <span class="help-block">{{ errors.birthday }}</span>
+        </div> -->
+        <div class="form-group {% if errors.photo %}has-error{% endif %}">
+            <label for="photo" class="col-sm-2 control-label">Фото</label>
+            <div class="col-sm-10">
+                <input type="file" value=""
+                name="photo" id="photo"
+                class="form-control" />
+                <span class="help-block">{{ errors.photo }}</span>
+            </div>
+        </div>         
+        <div class="form-group {% if errors.ticket %}has-error{% endif %}">
+            <label for="ticket" class="col-sm-2 control-label">Номер студенческого*</label>
+            <div class="col-sm-10">
+                <input type="text" value="{{ request.POST.ticket }}"
+                name="ticket" id="ticket"
+                class="form-control" 
+                placeholder = "" />
+                <span class="help-block">{{ errors.ticket }}</span>
+            </div>
         </div>
-        <div>
-            <label for="photo">Фото</label>
-            <input type="file" value="" name="photo" id="photo" >
+        <div class="form-group {% if errors.student_group %}has-error{% endif %}">
+            <label for="student_group" class="col-sm-2 control label">Группа*</label>
+            <div class="col-sm-10">
+                <select name="student_group" id="student_group" class="form-control">
+                <option value="">Выберите группу</option>
+                {% for group in groups %}
+                    <option value="{{ group.id }}"{% if group.id == request.POST.student_group|add:0 %}
+                    selected="1" {% endif %}>
+                    {{ group.title }}
+                    </option>
+                {% endfor %}
+                </select>
+                <span class="help-block">{{ errors.student_group }}</span>
+            </div>
         </div>
-        <div>
-            <label for="ticket">Билет</label>
-            <input type="text" value="" name="ticket" id="ticket" placeholder = "Номер вашего студенческого билета">
+
+        <div class="form-group {% if errors.notes %}has-error{% endif %}">
+            <label for="notes" class="col-sm-2 control-label">Дополнительные ведомости</label>
+            <div class="col-sm-10">
+                <textarea name="notes" id="notes" class="form-control" > {{ request.POST.notes }}
+
+                </textarea>
+                <span class="help-block">{{ errors.notes }}</span>
+            </div>
         </div>
-        <div>
-            <label for="student_group">Группа</label>
-            <select name="student_group" id="student_group">
+        
+        <div class="form-group">
+            <label class="col-sm-2 control label"></label>
+            <div class="col-sm-10">
+                <input type="submit" value="Добавить" name="add_button" class="btn btn-primary">
+                <button type="submit" name="cancel_button" class="btn btn-link">Отменить</button>
+            </div>
+        </div>
+        <!-- <div>
+            <label for="student_group">Группа*</label>
+            <span class="help-block">{{ errors.student_group }}</span>
+            <select name="student_group" id="student_group" class="form-control">
                 <option value="">Выберите группу</option>
                 {% for group in groups  %}
-                    
-                <option value="{{group.id}}">{{group.title}}</option>
+                <option value="{{group.id}}"{% if group.id == request.POST.student_group|add:0 %} selected="1"    
+                {% endif %}>{{group.title}}</option>
                 {% endfor %}
             </select>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <label for="notes">Дополнительные ведомости</label>
-            <textarea name="notes" id="notes" class="form-control" placeholder = "Если таковые имеются"></textarea>
+            <textarea name="notes" id="notes" value="{{ request.POST.notes }}" class="form-control" 
+            placeholder = "Если таковые имеются"></textarea>
+            <span class="help-block">{{ errors.notes }}</span>
         </div>
         <div>
             <input type="submit" value="Добавить" name="add_button">
             <button type="submit" name="cancel_button">Отменить</button>
-        </div>
+        </div> -->
 
     </form>
 {% endblock content %}

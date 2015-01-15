@@ -29,7 +29,7 @@ def exam_list(request):
         exams = paginator.page(1)
     except EmptyPage:
         #if page out of range (9999),deliver lasr page of results
-        examss = paginator.page(paginator.num_pages)
+        exams = paginator.page(paginator.num_pages)
 
     return render(request, 'students/exam_list.html',
         {'exams': exams })
