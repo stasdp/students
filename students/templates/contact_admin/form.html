@@ -1,0 +1,18 @@
+{% extends "students/base.html" %}
+{% load static from staticfiles %}
+
+{% block meta_title %}Связь с администратором{% endblock meta_title %}
+{% block title %}Связь с администратором{% endblock title %}
+
+{% block status_message %}
+  {% if errors %}
+  <div class="alert alert-warning" role="alert">
+    Пожалуйста,исправьте следующие ошибки.
+  </div>
+  {% endif %}
+{% endblock status_message %}
+
+{% block content %}
+    тут будет форма контакта
+{% endblock content %}
+

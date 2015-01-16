@@ -26,6 +26,8 @@ urlpatterns = patterns('',
     url(r'^exam/add/$', 'students.views.exam_list.exam_add',name='exam_add'),
     url(r'^exam/(?P<gid>\d+)/edit/$', 'students.views.exam_list.exam_edit', name='exam_edit'),
     url(r'^exam/(?P<gid>\d+)/delete/$', 'students.views.exam_list.exam_delete', name='exam_delete'),
+    #Contact admin form
+    url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
 
 )
 if DEBUG:
