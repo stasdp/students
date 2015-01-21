@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from students.views.students import StudentList
 from .settings import MEDIA_ROOT, DEBUG
 
 
@@ -10,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'studentsdb.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', 'students.views.students_list.students_list', name='home'),
+    url(r'^students_list$', StudentList.as_view()),
     url(r'^students/add/$', 'students.views.students_list.students_add', name='students_add'),
     url(r'^students/(?P<sid>\d+)/edit/$', 'students.views.students_list.students_edit', name='students_edit'),
     url(r'^students/(?P<sid>\d+)/delete/$', 'students.views.students_list.students_delete', name='students_delete'),
@@ -28,6 +30,8 @@ urlpatterns = patterns('',
     url(r'^exam/(?P<gid>\d+)/delete/$', 'students.views.exam_list.exam_delete', name='exam_delete'),
     #Contact admin form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
+    #testing contact_form
+    url(r'^contact/$', 'students.views.contact_admin.contact_admin', name='contact_form'),
 
 )
 if DEBUG:

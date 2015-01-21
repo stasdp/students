@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from django.conf import global_settings
 
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -46,7 +47,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'students',
+    'django_mandrill',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,6 +62,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'studentsdb.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 WSGI_APPLICATION = 'studentsdb.wsgi.application'
 
@@ -89,6 +94,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+ADMIN_EMAIL = 'staspanuta@gmail.com'
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'staspanuta@gmail.com'
+EMAIL_HOST_PASSWORD = 'jZPP1HAaJOIp1N0Tsl5hPw'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'staspanuta@gmail.com'
+EMAIL_BACKEND = 'django_mandrill.mail.backends.mandrillbackend.EmailBackend'
+MANDRILL_API_KEY = "jZPP1HAaJOIp1N0Tsl5hPw" 
 
 
 # Static files (CSS, JavaScript, Images)

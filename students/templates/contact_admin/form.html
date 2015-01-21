@@ -1,18 +1,25 @@
 {% extends "students/base.html" %}
 {% load static from staticfiles %}
-
+{% load crispy_forms_tags %}
 {% block meta_title %}Связь с администратором{% endblock meta_title %}
 {% block title %}Связь с администратором{% endblock title %}
 
 {% block status_message %}
-  {% if errors %}
+  {% if form.errors %}
   <div class="alert alert-warning" role="alert">
     Пожалуйста,исправьте следующие ошибки.
   </div>
   {% endif %}
-{% endblock status_message %}
+  {{ block.super }}
+
+{% endblock %}
 
 {% block content %}
-    тут будет форма контакта
+{% crispy form %}
 {% endblock content %}
 
+    <!-- <form action="{% url "contact_admin" %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Отправить" name="send_button">
+    </form> -->
