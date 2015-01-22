@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from students.views.students import StudentList
+from students.views.students_list import StudentList
 from .settings import MEDIA_ROOT, DEBUG
 
 
