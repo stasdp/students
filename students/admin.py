@@ -1,5 +1,10 @@
 from django.contrib import admin
-from models import Student, Group, Exam, Teacher, Lesson
+# from models import Student, Group, Exam, Teacher, Lesson
+from models.groups import Group
+from models.students import Student
+from models.exams import Exam
+from models.teachers import Teacher
+from models.lessons import Lesson
 #
 
 
