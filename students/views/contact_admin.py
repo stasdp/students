@@ -9,8 +9,25 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from contact_form.forms import ContactForm
 from contact_form.views import ContactFormView 
+from django.views.generic.edit import FormView
+
+# class ContactView(FormView):
+#     template_name = 'contact_admin/form.html'
+#     form_class = ContactForm
+#     success_url = '/contact-admin/'
+
+#     def form_valid(self, form):
+#         #This method is called for valid data
+#         subject = form.cleaned_data['subject']
+#         message = form.cleaned_data['message']
+#         from_email = form.cleaned_data['from_email']
+
+#         send_mail(subject, message, from_email, ['staspanuta@gmail.com'])
+
+#         return super(ContactView, self).form_valid(form)
 
     # TODO: Define form fields here
+
 class ContactForm(forms.Form):
     def __init__(self, *args, **kwargs):
         #call original initializator
@@ -60,7 +77,7 @@ def contact_admin(request):
                 message = u'Во время отправки письма случилась непредсказуемая ошибка.Попробуйте воспользоваться позже.'
 
             else:
-                message = u'Сообщение успешно отослано!'
+                message = u'Сообщение успешно отправлено!'
             #redirect to same contact page with success message
             return HttpResponseRedirect(
                 u'%s?status_message=%s' % (reverse('contact_admin'), message))
