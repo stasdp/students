@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
-from students.views.students_list import StudentList, StudentUpdateView, StudentDeleteView
+from students.views.students_list import StudentList, StudentUpdateView, StudentDeleteView, StudentAddView
 from students.views.groups_list import GroupDeleteView, GroupAddView, GroupUpdateView
 from students.views.exam_list import ExamAddView, ExamUpdateView, ExamDeleteView
+from students.views.journal import JournalView
 from .settings import MEDIA_ROOT, DEBUG
 
 
@@ -14,7 +15,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
     url(r'^$', 'students.views.students_list.students_list', name='home'),
     url(r'^students_list$', StudentList.as_view()),
-    url(r'^students/add/$', 'students.views.students_list.students_add', name='students_add'),
+    # url(r'^students/add/$', 'students.views.students_list.students_add', name='students_add'),
+    url(r'^students/add/$', StudentAddView.as_view(), name='students_add'),
     url(r'^students/(?P<pk>\d+)/edit/$',
         StudentUpdateView.as_view(),
         name='students_edit'),
@@ -29,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<pk>\d+)/delete/$', GroupDeleteView.as_view(), name='groups_delete'),
     # url(r'^groups/(?P<gid>\d+)/delete/$', 'students.views.groups_list.groups_delete', name='groups_delete'),
     #journal urls
-    url(r'^journal/$', 'students.views.journal.journal', name='journal'),
+    url(r'^journal/$', JournalView.as_view(), name='journal'),
     url(r'^admin/', include(admin.site.urls)),
     #Exam urls
     url(r'^exam/$', 'students.views.exam_list.exam_list', name='exam'),

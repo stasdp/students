@@ -1,174 +1,86 @@
 {% extends "students/base.html" %}
+{% load static from staticfiles %}
 
-
-{% block meta_title %}Учет посещений{% endblock meta_title %}
-{% block title %}Учет посещений{% endblock title %}
+{% block meta_title %}Журнал посещений{% endblock meta_title %}
+{% block title %}Журнал посещений{% endblock title %}
 
 {% block content %}
-			<nav>
-				<ul class="pager">
-				<li class="previous-month"><a href="#">&larr;</a></li>
-				<li>Ноябрь</li>
-				<li class="next-month"><a href="#">&rarr;</a></li>
-				</ul>
-			</nav>
-			<table class="table table-hover table-bordered table-striped">
-			<thead>
-				<tr>
-						<th>#</th>
-						<th>Студент</th>
-						<th>СБ  1</th>
-						<th>ВС  2</th>
-						<th>ПН  3</th>
-						<th>ВТ  4</th>
-						<th>СР  5</th>
-						<th>ЧТ  6</th>
-						<th>ПТ  7</th>
-						<th>СБ  8</th>
-						<th>ВС  9</th>
-						<th>ПН  10</th>
-						<th>ВТ  11</th>
-						<th>СР  12</th>
-						<th>ЧТ  13</th>
-						<th>ПТ  14</th>
-						<th>СБ  15</th>
-						<th>ВС  16</th>
-						<th>ПН  17</th>
-						<th>ВТ  18</th>
-						<th>СР  19</th>
-						<th>ЧТ  20</th>
-						<th>ПТ  21</th>
-						<th>СБ  22</th>
-						<th>ВС  23</th>
-						<th>ПН  24</th>
-						<th>ВТ  25</th>
-						<th>СР  26</th>
-						<th>ЧТ  27</th>
-						<th>ПТ  28</th>
-						<th>СБ  29</th>
-						<th>ВС  30</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>
-							<a title="Редактировать" href="#">Paniuta Stanislav</a></td>		
-							<td> <input type="checkbox"></td>		
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-							<td> <input type="checkbox"></td>	
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>
-							<a title="Редактировать" href="#">Tokar Sergiy</a>
-						</td>
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>
-							<a title="Редактировать" href="#">Kuchma Artem</a>
-						</td>
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						<td> <input type="checkbox"></td>	
-						
-					</tr>
-				</tbody>
-			</table>
-				<nav>
-					<ul class="pagination">
-						<li><a href="#">&laquo;</a></li>
-						<li class="active"><a href="#">1</a></li>
-						<!-- <li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li> -->
-						<li><a href="#">&raquo;</a></li>
-					</ul>
-				</nav>
+
+{% if not students %}
+
+<div class="alert alert-warning">
+	Пока нет студентов в базе.Пожалуйста,
+	<a href="{% url "students_add" %}">добавьте</a> первого.
+</div>
+{% else %}
+<div class="alert alert-warning">
+	Изменения в журнал сохраняются автоматически при каждом клике на клетку таблицы.
+	<span id="ajax-progress-indicator">Идет сохранение...</span>
+</div>
+<p id="journal-nav" class="text-center">
+	<a href="?month={{ prev_month }}"
+		title="Предыдущий месяц">&larr;</a>
+<!-- TODO: Translate month name-->
+<strong>{{ month_verbose }} {{ year }}</strong>
+<a href="?month={{ next_month }}"
+	title="Следующий месяц">&rarr;</a>
+</p>
+
+<table class="table table-hover table-striped table-bordered"
+	id="students-journal">
+	<thead>
+		<tr class="header">
+			<th class="num">#</th>
+			<th class="name">Студент</th>
+			{% for day in month_header %}
+
+			<th class="day-header">
+				<!-- TODO: Translate day name -->
+				{{ day.verbose }}
+				<br />
+				{{ day.day }}
+			</th>
+			{% endfor %}
+		</tr>
+	</thead>
+
+	<tbody>
+		{% csrf_token %}
+
+		{% for student in students  %}
+		<tr>
+			<td>
+				{% if is_paginated %}
+					{{ page_obj.start_index|add:forloop.counter|add:"-1" }}
+				{% else %}
+					{{ forloop.counter }}
+				{% endif %}
+			</td>
+
+			<td>
+				<a title="Редактировать" target="_blank" href="{% url "students_edit" student.id %}">
+					{{ student.fullname }}
+				</a>
+			</td>
+			{% for day in student.days %}
+			<td class="day-box">
+				<input type="checkbox" data-student-id="{{ student.id }}"
+					data-date="{{ day.date }}" data-url="{{ student.update_url }}"
+					value="1"{% if day.present %} checked="checked"{% endif %}>
+
+			</td>
+				
+			{% endfor %}
+		</tr>
+			
+		{% endfor %}
+	</tbody>
+
+	</table>
+{% endif %}
+
+{% with object_list=students %}
+	{% include "students/pagination.html" %}	
+{% endwith %}
+
 {% endblock content %}

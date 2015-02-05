@@ -8,8 +8,8 @@ from studentsdb.settings import ADMIN_EMAIL
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from contact_form.forms import ContactForm
-from contact_form.views import ContactFormView 
 from django.views.generic.edit import FormView
+# from contact_form.views import ContactFormView 
 
 # class ContactView(FormView):
 #     template_name = 'contact_admin/form.html'
@@ -81,7 +81,7 @@ def contact_admin(request):
             #redirect to same contact page with success message
             return HttpResponseRedirect(
                 u'%s?status_message=%s' % (reverse('contact_admin'), message))
-            # u'%s?status_message=%s' % (reverse('contact_admin'), message))
+
     else:
         form = ContactForm()
     return render(request, 'contact_admin/form.html', {'form': form})

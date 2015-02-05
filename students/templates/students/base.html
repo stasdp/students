@@ -4,12 +4,10 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Cервис учета студентов - {% block meta_title %}	{% endblock meta_title %}</title>
-	<meta name="description"
-		      value="Система учета студентов учебного заведения"/>
-    <meta name = "viewport"
-            content="width=device-width, initial-scale=1">
-	<link rel="stylesheet"
-             href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+	<meta name="description" value="Система учета студентов учебного заведения"/>
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" 
     href="{{ PORTAL_URL }}{% static "css/main.css" %}">
     {% block extra_css %}{% endblock extra_css %}
@@ -75,17 +73,21 @@
 			</div>
 
 	<!-- Start Footer -->
-	<div class="row" id="footer">
-		<div class="col-xs-12">
-		&copy; 2014 Сервис учета студентов
-		</div>
-	</div>
+			<div class="row" id="footer">
+				<div class="col-xs-12">
+				&copy; 2015 Сервис учета студентов
+				</div>
+			</div>
 	<!-- End Footer -->
 </div>
 <!-- Javascripts Section -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+	<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="{% static "js/main.js" %}"></script>
 {% block extra_js %}{% endblock extra_js %}
 </body>
 </html>
