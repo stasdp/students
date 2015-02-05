@@ -1,0 +1,15 @@
+{% extends "students/base.html" %}
+{% load static from staticfiles %}
+
+{% block meta_title %}Удалить студента{% endblock meta_title %}
+{% block title %}Удалить студента{% endblock title %}
+
+{% block content %}
+
+<form action="{% url "students_delete" object.id %}" method="post">
+	{% csrf_token %}
+	<p>Вы действительно хотите удалить студента "{{ object }}" ?</p>
+	<input type="submit" name="delete_button" value="Да" class="btn btn-danger"><br/><br/>
+</form>
+
+{% endblock content %}
