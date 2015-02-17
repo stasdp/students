@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% load crispy_forms_tags %}
 
+<<<<<<< HEAD
 {% block meta_title %}
 {% if '/add/' in request.path %}
     {{ ADDING }}
@@ -18,17 +19,29 @@
     {{ EDITING }}
     {% endif %}
 {% endblock title %}
+=======
+{% block meta_title %}Форма редактирования студента{% endblock meta_title %}
+{% block title %}Редактировать студента{% endblock title %}
+>>>>>>> origin/master
 
 {% block status_message %}
   {% if errors %}
   <div class="alert alert-warning" role="alert">
+<<<<<<< HEAD
      Пожалуйста,исправьте следующие ошибки.
+=======
+    Пожалуйста,исправьте следующие ошибки.
+>>>>>>> origin/master
   </div>
   {% endif %}
 {% endblock status_message %}
 
 {% block content %}
 
+<<<<<<< HEAD
 {% crispy form form.helper %}
+=======
+{% crispy form %}
+>>>>>>> origin/master
 
 {% endblock content %}

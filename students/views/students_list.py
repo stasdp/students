@@ -11,7 +11,10 @@ from datetime import datetime
 from django.views.generic import ListView
 from django.views.generic import UpdateView
 from django.views.generic import DeleteView
+<<<<<<< HEAD
 from django.views.generic import CreateView
+=======
+>>>>>>> origin/master
 from django.forms import ModelForm
 
 from crispy_forms.helper import FormHelper
@@ -120,6 +123,7 @@ def students_list(request):
 #     return render(request, 'students/students_list.html',
 #         {'students': students})
 
+<<<<<<< HEAD
 
 # def students_add(request):
 #     # was form posted?
@@ -385,5 +389,146 @@ class StudentDeleteView(DeleteView):
         return u'%s?status_message=Студент успешно удален!' \
             % reverse('home')
 
+=======
+def students_add(request):
+    # was form posted?
+    if request.method == "POST":
+        # was form add button clicked?
+        if request.POST.get('add_button') is not None:
+            # errors collection
+            errors = {}
+
+            # data for student object
+            data = {'middle_name': request.POST.get('middle_name'),
+                    'notes': request.POST.get('notes')}
+
+            # validate user input
+            first_name = request.POST.get('first_name', '').strip()
+            if not first_name:
+                errors['first_name'] = u"Имя является обвязательным"
+            else:
+                data['first_name'] = first_name
+
+            last_name = request.POST.get('last_name', '').strip()
+            if not last_name:
+                errors['last_name'] = u"Фамилия является обязательной"
+            else:
+                data['last_name'] = last_name
+
+            birthday = request.POST.get('birthday', '').strip()
+            if not birthday:
+                errors['birthday'] = u"Дата рождения является обязательной"
+            else:
+                try:
+                    datetime.strptime(birthday, '%Y-%m-%d')
+                except Exception:
+                    errors['birthday'] = \
+                        u"Введите корректную дату (напр. 1984-12-30)"
+                else:
+                    data['birthday'] = birthday
+
+            ticket = request.POST.get('ticket', '').strip()
+            if not ticket:
+                errors['ticket'] = u"Номер билета является обязательным"
+            else:
+                data['ticket'] = ticket
+
+            student_group = request.POST.get('student_group', '').strip()
+            if not student_group:
+                errors['student_group'] = u"Выберите группу для студента"
+            else:
+                groups = Group.objects.filter(pk=student_group)
+                if len(groups) != 1:
+                    errors['student_group'] = u"Выберите конкретную группу"
+                else:
+                    data['student_group'] = groups[0]
+
+
+            photo = request.FILES.get('photo')
+            if photo:
+                data['photo'] = photo
+
+            # save student
+            if not errors:
+                student = Student(**data)
+                student.save()
+
+                # redirect to students list
+                return HttpResponseRedirect(
+                    u'%s?status_message=Студент успешно добавлен!' %
+                    reverse('home'))
+            else:
+                # render form with errors and previous user input
+                return render(request, 'students/students_add.html',
+                    {'groups': Group.objects.all().order_by('title'),
+                     'errors': errors})
+        elif request.POST.get('cancel_button') is not None:
+            # redirect to home page on cancel button
+            return HttpResponseRedirect(
+                u'%s?status_message=Добавление студета отменено!' %
+                reverse('home'))
+    else:
+        # initial form render
+        return render(request, 'students/students_add.html',
+            {'groups': Group.objects.all().order_by('title')})
+
+
+# def students_edit(request, sid):
+#     return HttpResponse('<h1>Edit Student %s</h1>' % sid)
+
+
+class StudentUpdateForm(ModelForm):
+    class Meta:
+        model = Student
+        # fields = '__all__'
+        fields = ['first_name', 'last_name', 'middle_name', 'birthday', 'photo', 'ticket', 'student_group', 'notes',]
+
+
+    def __init__(self, *args, **kwargs):
+        super(StudentUpdateForm, self).__init__(*args, **kwargs)
+
+        self.helper = FormHelper(self)
+        #set form tag attr
+        self.helper.form_action = reverse('students_edit',
+            kwargs={'pk': kwargs['instance'].id})
+        self.helper.form_method = 'POST'
+        self.helper.form_class = 'form-horizontal'
+        #set form field properties
+        self.helper.help_text_inline = True
+        self.helper.html5_required = True
+        self.helper.label_class = 'col-sm-2 control-label'
+        self.helper.field_class = 'col-sm-10'
+        #add buttons
+        self.helper.layout[-1] = FormActions(
+            Submit('add_button', u'Сохранить',css_class = "btn btn-primary"),
+            Submit('cancel_button', u'Отменить', css_class = "btn btn-link"),
+        )
+
+class StudentUpdateView(UpdateView):
+    model = Student
+    template_name = 'students/students_edit.html'
+    form_class = StudentUpdateForm
+
+    def get_success_url(self):
+        return u'%s?status_message=Студент сохранен!' % reverse('home')
+
+    def post(self, request, *args, **kwargs):
+        if request.POST.get('cancel_button'):
+            return HttpResponseRedirect(
+                u'%s?status_message=Редактирование студента отменено!' % reverse('home'))
+
+        else:
+            return super(StudentUpdateView, self).post(request, *args, **kwargs)
+
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = 'students/students_confirm_delete.html'
+
+    def get_success_url(self):
+        return u'%s?status_message=Студент успешно удален!' \
+            % reverse('home')
+
+>>>>>>> origin/master
 # def students_delete(request, sid):
 #     return HttpResponse('<h1>Delete Student %s</h1>' % sid)
